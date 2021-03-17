@@ -1,0 +1,70 @@
+// FONTS
+
+@import url("../assets/agencyfb-regular.otf");
+
+// VARIABLES
+
+$bg-color: #191919;
+$enabled-color: #00ff97;
+$disabled-color: #8a8a8a;
+
+$big-font: 25vw;
+$small-font: 3.5vw;
+
+// CSS
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Agency FB", sans-serif;
+}
+
+html {
+  font-size: 82.5%;
+}
+
+body {
+  background: $bg-color;
+  user-select: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.week-days {
+  display: flex;
+  flex-direction: row;
+  color: $disabled-color;
+  font-size: $small-font;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  p {
+    margin: 10px;
+  }
+}
+
+.time {
+  color: $enabled-color;
+  font-size: $big-font;
+  font-weight: 500;
+}
+
+.active {
+  color: $enabled-color;
+}
+
+@media (max-width: 650px) {
+  .inactive {
+    display: none;
+  }
+  .active {
+    font-size: $big-font/2.5;
+  }
+}
