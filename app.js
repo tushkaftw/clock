@@ -8,75 +8,18 @@ const saturday = document.querySelector('.saturday');
 const timeEl = document.querySelector('.time');
 const twelveHr = document.querySelector('.twelve-hr');
 const twentyFourHr = document.querySelector('.twenty-four-hr');
+const daysList = [sunday, monday, tuesday, wednesday, thursday, friday, saturday];
 
 window.addEventListener('load', day);
 window.addEventListener('load', time);
-window.addEventListener('load', twentyFourType);
 
 function day() {
-    switch(new Date().getDay()) {
-        case 0:
-            sunday.classList.add('active');
-            monday.classList.add('inactive');
-            tuesday.classList.add('inactive');
-            wednesday.classList.add('inactive');
-            thursday.classList.add('inactive');
-            friday.classList.add('inactive');
-            saturday.classList.add('inactive');
-            break;
-        case 1:
-            sunday.classList.add('inactive');
-            monday.classList.add('active');
-            tuesday.classList.add('inactive');
-            wednesday.classList.add('inactive');
-            thursday.classList.add('inactive');
-            friday.classList.add('inactive');
-            saturday.classList.add('inactive');
-            break;
-        case 2:
-            sunday.classList.add('inactive');
-            monday.classList.add('inactive');
-            tuesday.classList.add('active');
-            wednesday.classList.add('inactive');
-            thursday.classList.add('inactive');
-            friday.classList.add('inactive');
-            saturday.classList.add('inactive');
-            break;
-        case 3:
-            sunday.classList.add('inactive');
-            monday.classList.add('inactive');
-            tuesday.classList.add('inactive');
-            wednesday.classList.add('active');
-            thursday.classList.add('inactive');
-            friday.classList.add('inactive');
-            saturday.classList.add('inactive');
-            break;
-        case 4:
-            sunday.classList.add('inactive');
-            monday.classList.add('inactive');
-            tuesday.classList.add('inactive');
-            wednesday.classList.add('inactive');
-            thursday.classList.add('active');
-            friday.classList.add('inactive');
-            saturday.classList.add('inactive');
-            break;
-        case 5:
-            sunday.classList.add('inactive');
-            monday.classList.add('inactive');
-            tuesday.classList.add('inactive');
-            wednesday.classList.add('inactive');
-            thursday.classList.add('inactive');
-            friday.classList.add('active');
-            saturday.classList.add('inactive');
-            break;
-        case 6:
-            sunday.classList.add('inactive');
-            monday.classList.add('inactive');
-            tuesday.classList.add('inactive');
-            wednesday.classList.add('inactive');
-            thursday.classList.add('inactive');
-            friday.classList.add('inactive');
-            saturday.classList.add('active');
+    for (i = 0; i < 7; i++) {
+        if (i == new Date().getDay()) {
+            daysList[i].classList.add('active');
+        } else {
+            daysList[i].classList.add('inactive');
+        }
     }
 }
 
