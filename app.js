@@ -27,6 +27,11 @@ function time() {
     let hours = new Date().getHours();
     let minutes = new Date().getMinutes();
     let seconds = new Date().getSeconds();
+
+    if(hours == 0 && seconds == 1) {
+        location.reload();
+    }
+    
     hours = checkTime(hours);
     minutes = checkTime(minutes);
     seconds = checkTime(seconds);
